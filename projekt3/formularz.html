@@ -7,20 +7,19 @@
 				margin-right: auto;
 			}
 			
-			input {
-				border-radius: 5px;
-				border-width: 1px;
-				padding: 3px;
+			.wide {
+				width: 97%;
 			}
 			
-			textarea {
+			input, textarea, select {
 				border-radius: 5px;
 				border-width: 1px;
-				padding: 3px;
-			}
+				padding: 6px;
+				background-color: #F7F7F7;
+			}		
 		
-			td{
-				padding: 10px;
+			td {
+				padding-bottom: 7px;
 			}
 			
 			hr {
@@ -42,18 +41,18 @@
 			<table>
 				<tr>
 					<th><label for="imie">Imie </label></th> 
-					<td colspan="3"><input id="imie" type="text" name="imie" style="width:97%"></td>
+					<td colspan="3"><input type="text" name="imie" class="wide"></td>
 				</tr>
 				<tr>
 					<th><label for="nazwisko">Nazwisko </label></th> 
-					<td colspan="3"><input id="nazwisko" type="text" name="nazwisko" style="width:97%"></td>
+					<td colspan="3"><input type="text" name="nazwisko" class="wide"></td>
 				</tr>
 				<tr>
 					<th><label for="dataurodzenia">Data urodzenia </label></th> 
-					<td><input type="date" id="dataurodzenia" name="dataurodzenia"></td> 
+					<td><input type="date" name="dataurodzenia"></td> 
 					<th><label for="plec">Płeć </label></th> 
 					<td> 
-						<select name="plec" id="plec">
+						<select name="plec">
 							<option value="inna">Inna</option>
 							<option value="kobieta">Kobieta</option>
 							<option value="mezczyzna">Mężczyzna</option>
@@ -65,50 +64,58 @@
 				</tr>
 				<tr>
 					<th><label for="wojewodztwo">Województwo </label></th> 
-					<td colspan="3"><input id="wojewodztwo" type="text" name="wojewodztwo" style="width:97%"></td>
+					<td colspan="3"><input type="text" name="wojewodztwo" class="wide"></td>
 				</tr>
 					<tr>
 					<th><label for="miasto">Miasto </label></th> 
-					<td colspan="3"><input id="miasto" type="text" name="miasto" style="width:97%"></td>
+					<td colspan="3"><input type="text" name="miasto" class="wide"></td>
 				</tr>
 				</tr>
 				<tr>
 					<th><label for="ulica">Ulica </label></th> 
-					<td><input id="ulica" type="text" name="ulica"></td>
+					<td><input type="text" name="ulica"></td>
 					<th><label for="numerdomu"> nr. </label></th> 
-					<td><input id="numerdomu" type="number" name="numerdomu" style="width:30%"  min="1" ></td>
+					<td><input type="number" name="numerdomu" style="width:30%"  min="1" ></td>
 				</tr>
 				<tr>
 					<td colspan="4"><hr></td>
 				</tr>
 				<tr>
 					<th><label for="email">E-Mail </label></th> 
-					<td colspan="3"><input id="email" type="email" name="email" style="width:97%"></td>
+					<td colspan="3"><input type="email" name="email" class="wide"></td>
 				</tr>
 				<tr>
 					<th><label for="haslo">Hasło </label></th> 
-					<td colspan="3"><input id="haslo" type="password" name="haslo" style="width:97%"></td>
+					<td colspan="3"><input type="password" name="haslo" class="wide"></td>
 				</tr>
 				<tr>
 					<th><label for="telefon">Nr. Telefonu </label></th> 
-					<td colspan="1"><input id="telefon" type="tel" name="telefon"  pattern="[0-9]{3} [0-9]{3} [0-9]{3}" style="width:97%"></td>
+					<td colspan="1"><input type="tel" name="telefon"  pattern="[0-9]{3} [0-9]{3} [0-9]{3}" class="wide"></td>
 				</tr>
 				<tr>
 					<td colspan="4"><hr></td>
 				</tr>
 				<tr>
 					<th><label for="prawojazdy">Prawa jazdy kat. B</label></th>
-					<td><input id="prawojazdy" type="checkbox" name="prawojazdy"></td>
+					<td><input type="checkbox" name="prawojazdy"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<th><label for="uwagi">Uwagi</label></th>
-					<td colspan="3"><textarea style="resize: none;" id="uwagi" name="uwagi" cols="50" rows="4" maxlength="256"></textarea>
+					<td colspan="3"><textarea style="resize: none;" name="uwagi" cols="50" rows="4" maxlength="256"></textarea>
 				</tr>	
 				<tr>
 					<td style="text-align: center;" colspan="4"> 
 						<input type="submit" value="Gotowe">
 						<input type="reset" value="Resetuj">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4"> 
+						<th><label for="haslo" style="display: inline-block;">Hasło </label></th> 
+						<td colspan="3"><input type="password" name="haslo" style="display: inline-block;"></td>
+						<th><label for="haslo" style="display: inline-block;">Hasło </label></th> 
+						<td colspan="3"><input type="password" name="haslo" style="display: inline-block;"></td>
 					</td>
 				</tr>
 			</table>

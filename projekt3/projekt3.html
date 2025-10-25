@@ -4,13 +4,50 @@
 		<meta charset="UTF-8">
 		<title>BSI Projekt 3</title>
 		<link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+		<style>
+			* {
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			
+			.przycisk {
+				transition: transform 0.1s ease;
+			}
+			
+			.przycisk:hover {
+				transform: scale(1.1); 
+				color: red;
+			}
+			
+			.mainbox {
+				width: 400px;
+				border-radius: 0px 0px 40px 40px;
+				padding: 5px;
+				background-color: #E3E3E3;
+				font-size: 30px;
+				font-family: Sans-serif;
+			}
+			
+			.titlebox {
+				width: 400px;
+				border-radius: 40px 40px 0px 0px;
+				padding: 5px;
+				background-color: #C9C9C9;
+				font-family: Sans-serif;
+				font-size: 40px; 
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	<body>
-		<h2>Projekt 3</h2>
-		<ul>
-			<li><a href="tabelka.html">Tabela</a></li>
-			<li><a href="obrazy.html">Galeria</a></li>
-			<li><a href="formularz.html">Formularz</a></li>
-		</ul>
+		<div class="titlebox">
+			<p>Projekt 3</p>
+		</div>
+		<div class="mainbox">
+			<p class="przycisk" ><a href="tabelka.html">Tabela</a></p>
+			<p class="przycisk" ><a href="obrazy.html">Galeria</a></p>
+			<p class="przycisk" ><a href="formularz.html">Formularz</a></p>
+		</div>
 	</body>
 </html>
