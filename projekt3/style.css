@@ -1,0 +1,16 @@
+.header {
+    background: #2c4c3b;
+	margin: 10px 10px 10px 10px;
+    padding: 10px 0px 10px 0px;
+    border-radius: 10px;
+    color: white;
+}
+
+* {
+	font-family: Sans-serif
+}
+
+body {
+	text-align: center;
+	background-color: #96A78D;
+}
