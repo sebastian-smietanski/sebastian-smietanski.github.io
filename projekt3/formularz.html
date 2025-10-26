@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+		<style>
+			* {
+				font-family: Sans-serif
+			}
+			
+			input, textarea, select {
+				border-radius: 5px;
+				border-width: 1px;
+				padding: 6px;
+				background-color: #F7F7F7;
+				
+				width: 100%;
+				box-sizing: border-box;
+			}		
+
+			label {
+				margin-left: 5px;
+			}
+			
+			hr {
+				color: #ededed;
+			}
+		
+			form div {
+				width: auto;
+				margin: 0px auto 0px auto;
+				padding: 10px;
+				display: inline-block;
+				
+				border-radius: 25px;
+				background: #C7C7C7;
+			}
+			
+			form div div {
+				width: auto;
+				margin: 0px;
+				padding: 0px;
+				display: grid;
+				
+				grid-auto-flow: column;
+				
+				background-color: 1cyan;
+			}
+			
+			form div div div {
+				width: auto;
+				margin: 5px;
+				padding: 0px;
+				
+				text-align: left;
+				grid-auto-flow: row;
+				
+				background-color: 1magenta;
+			}
+		</style>
+	<head>
+		<meta charset="UTF-8">
+		<title>BSI Projekt 3: Formularz</title>
+		<link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+	</head>
+	<body style="text-align: center;">
+		<h2>Formularz</h2>
+		<form method="post" action="">
+			<div>
+				<div>
+					<div> 
+						<label for="imie">Imie </label>
+						<input type="text" id="imie" name="imie"> 
+					</div>
+					<div> 
+						<label for="nazwisko">Nazwisko </label>
+						<input type="text" id="nazwisko" name="nazwisko">
+					</div>
+				</div>
+				
+				<div> 
+					<div>  
+						<label for="dataurodzenia">Data urodzenia </label>
+						<input type="date" id="dataurodzenia" name="dataurodzenia">
+					</div>
+					<div>  
+						<label for="plec">Płeć </label>
+						<select id="plec" name="plec">
+							<option value="" disabled selected>Wybierz Płeć</option>
+							<option value="inna">Inna</option>
+							<option value="kobieta">Kobieta</option>
+							<option value="mezczyzna">Mężczyzna</option>
+						</select>
+					</div>
+				</div>
+				
+				<hr>
+				
+				<div> 
+					<div>  
+						<label for="wojewodztwo">Województwo </label>
+						<select id="wojewodztwo" name="wojewodztwo">
+							<option value="" disabled selected>Wybierz województwo</option>
+							<option value="dolnoslaskie">Dolnośląskie</option>
+							<option value="kujawsko-pomorskie">Kujawsko-Pomorskie</option>
+							<option value="lubelskie">Lubelskie</option>
+							<option value="lubuskie">Lubuskie</option>
+							<option value="lodzkie">Łódzkie</option>
+							<option value="malopolskie">Małopolskie</option>
+							<option value="mazowieckie">Mazowieckie</option>
+							<option value="opolskie">Opolskie</option>
+							<option value="podkarpackie">Podkarpackie</option>
+							<option value="podlaskie">Podlaskie</option>
+							<option value="pomorskie">Pomorskie</option>
+							<option value="slaskie">Śląskie</option>
+							<option value="swietokrzyskie">Świętokrzyskie</option>
+							<option value="warminsko-mazurskie">Warmińsko-Mazurskie</option>
+							<option value="wielkopolskie">Wielkopolskie</option>
+							<option value="zachodniopomorskie">Zachodniopomorskie</option>
+						</select>
+					</div>
+				</div>
+				
+				<div> 
+					<div style="width: 350px;"> 
+						<label for="miasto">Miasto </label>
+						<input type="text" id="miasto" name="miasto">
+					</div>
+					<div style="width: 120px; justify-self: flex-end">  
+						<label for="kodpocztowy">Kod pocztowy </label>
+						<input type="text" id="kodpocztowy" name="kodpocztowy" pattern="\d{2}-\d{3}" inputmode="numeric" maxlength="6" placeholder="12-345">
+					</div>
+				</div>
+				
+				<div>
+					<div style="width: 250px;">  
+						<label for="ulica">Ulica</label>
+						<input type="text" id="ulica" name="ulica">
+					</div> 
+					<div style="width: 85px; justify-self: flex-end"> 
+						<label for="numerdomu">Nr. Domu</label>
+						<input type="number" id="numerdomu" name="numerdomu" min="1" >
+					</div> 
+					<div style="width: 120px; justify-self: flex-end"> 
+						<label for="numermieszkania">Nr. Mieszkania</label>
+						<input type="number" id="numermieszkania" name="numermieszkania" min="1" >
+					</div>
+				</div>
+				
+				<hr>
+				
+				<div> 
+					<div>  
+						<label for="email">E-Mail </label>
+						<input type="email" id="email" name="email">
+					</div>
+				</div>
+				
+				<div> 
+					<div>  
+						<label for="haslo">Hasło </label>
+						<input type="password" id="haslo" name="haslo">
+					</div>
+				</div>
+				
+				<div> 
+					<div>  
+						<label for="telefon">Nr. Telefonu </label>
+						<input type="tel" id="telefon" name="telefon"  pattern="[0-9]{3} [0-9]{3} [0-9]{3}">
+					</div>
+				</div>
+				
+				<hr>
+				
+				<div>
+					<div style="grid-auto-flow: column; justify-content: flex-start">
+						<label for="prawojazdy">Prawa jazdy kat. B</label>
+						<input type="checkbox" id="prawojazdy" name="prawojazdy">
+					</div>
+				</div>
+				
+				<div> 
+					<div>  
+						<label for="uwagi">Uwagi</label>
+						<textarea style="resize: none;" id="uwagi" name="uwagi" rows="4" maxlength="256"></textarea>
+					</div>
+				</div>
+				
+				<div> 
+					<div>
+						<input type="submit" value="Gotowe">
+					</div>
+					<div>
+						<input type="reset" value="Resetuj">
+					</div>
+				</div>		
+			</div>
+		</form>
+	</body>
+</html>

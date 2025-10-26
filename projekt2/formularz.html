@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html  lang="pl">
+		<style>
+
+		</style>
+	<head>
+		<meta charset="UTF-8">
+		<title>BSI Projekt 2: Formularz</title>
+		<link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+	</head>
+	<body style="text-align: center;">
+		<h2>Formularz</h2>
+		<form method="post" action="">
+			<table style="text-align: left; margin-left: auto; margin-right: auto;">
+				<tr>
+					<th><label for="imie">Imie </label></th> 
+					<td colspan="3"><input id="imie" type="text" name="imie" style="width:97%"></td>
+				</tr>
+				<tr>
+					<th><label for="nazwisko">Nazwisko </label></th> 
+					<td colspan="3"><input id="nazwisko" type="text" name="nazwisko" style="width:97%"></td>
+				</tr>
+				<tr>
+					<th><label for="dataurodzenia">Data urodzenia </label></th> 
+					<td><input type="date" id="dataurodzenia" name="dataurodzenia"></td> 
+					<th><label for="plec">Płeć </label></th> 
+					<td> 
+						<select name="plec" id="plec">
+							<option value="inna">Inna</option>
+							<option value="kobieta">Kobieta</option>
+							<option value="mezczyzna">Mężczyzna</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4"><hr></td>
+				</tr>
+				<tr>
+					<th><label for="wojewodztwo">Województwo </label></th> 
+					<td colspan="3"><input id="wojewodztwo" type="text" name="wojewodztwo" style="width:97%"></td>
+				</tr>
+					<tr>
+					<th><label for="miasto">Miasto </label></th> 
+					<td colspan="3"><input id="miasto" type="text" name="miasto" style="width:97%"></td>
+				</tr>
+				</tr>
+				<tr>
+					<th><label for="ulica">Ulica </label></th> 
+					<td><input id="ulica" type="text" name="ulica"></td>
+					<th><label for="numerdomu"> nr. </label></th> 
+					<td><input id="numerdomu" type="number" name="numerdomu" style="width:30%"  min="1" ></td>
+				</tr>
+				<tr>
+					<td colspan="4"><hr></td>
+				</tr>
+				<tr>
+					<th><label for="email">E-Mail </label></th> 
+					<td colspan="3"><input id="email" type="email" name="email" style="width:97%"></td>
+				</tr>
+				<tr>
+					<th><label for="haslo">Hasło </label></th> 
+					<td colspan="3"><input id="haslo" type="password" name="haslo" style="width:97%"></td>
+				</tr>
+				<tr>
+					<th><label for="telefon">Nr. Telefonu </label></th> 
+					<td colspan="1"><input id="telefon" type="tel" name="telefon"  pattern="[0-9]{3} [0-9]{3} [0-9]{3}" style="width:97%"></td>
+				</tr>
+				<tr>
+					<td colspan="4"><hr></td>
+				</tr>
+				<tr>
+					<th><label for="prawojazdy">Prawa jazdy kat. B</label></th>
+					<td><input id="prawojazdy" type="checkbox" name="prawojazdy"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th><label for="uwagi">Uwagi</label></th>
+					<td colspan="3"><textarea style="resize: none;" id="uwagi" name="uwagi" cols="50" rows="4" maxlength="256"></textarea>
+				</tr>	
+				<tr>
+					<td style="text-align: center;" colspan="4"> 
+						<input type="submit" value="Gotowe">
+						<input type="reset" value="Resetuj">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
