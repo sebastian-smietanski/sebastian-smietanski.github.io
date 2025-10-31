@@ -23,7 +23,7 @@
 
     color: white;
     font-size: 18px;
-    font-family: "Segoe UI Variable", "fantasy";
+    font-family: "Segoe UI Variable", "Arial", sans-serif;
     background-color: #1a2032;
 
     user-select: none; /* brak mozliwosci zaznaczenia */
@@ -105,9 +105,7 @@
     border-style: solid;
 }
 
-.mathBigFont {
-    font-size: 21px;
-}
+.mathBigFont {font-size: 21px;}
 
 .buttonBlue {background-color: #4cc2ff; color: #143141;}
 .buttonBlue:hover {background-color: #47b1e9;}
