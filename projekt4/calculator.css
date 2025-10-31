@@ -1,31 +1,91 @@
 .calculator {
     width: 320px;
     height: 500px;
+    /*
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    padding: 3px;
+     */
+    position: absolute;  /* Needed for draggable */
+    top: 50px;           /* initial position */
+    left: 50%;           /* initial horizontal position */
+    transform: translateX(-50%); /* keep it centered initially */
+
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
     border-radius: 7px;
+    border-style: solid;
 
     display: flex;
     flex-direction: column;
 
+    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.9), 0 100px 80px -40px rgba(0, 0, 0, 0.4);
+
+    color: white;
     font-size: 18px;
     font-family: "Segoe UI Variable", "fantasy";
     background-color: #1a2032;
+
+    user-select: none; /* brak mozliwosci zaznaczenia */
 }
+
+/********************************************************************************************/
 
 .topBar {
-    height: 20px;
-    background-color: pink;
+    display: flex;
+    flex-direction: row;
+
+    height: 32px;
+    background-color: 1pink;
 }
+
+.leftItems {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+
+.appName {
+    margin-left: 17px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightItems {
+    display: flex;
+    margin-left: auto;
+    font-size: 14px;
+}
+
+.buttonTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 46px;
+}
+
+.buttonTopMnMax:hover {background-color: #303644;}
+.buttonTopMnMax:active {background-color: #484d59;}
+
+.buttonTopClose:hover {background-color: #c42b1c;}
+.buttonTopClose:active {background-color: #b3271c;}
+
+/********************************************************************************************/
 
 .screen {
-    height: 30%;
-    background-color: cyan;
+    height: 38%;
+    background-color: 1cyan;
 }
 
+/********************************************************************************************/
+
 .calculatorKeyboard {
-    height: 70%;
+    margin: 3px;
+    height: 62%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
@@ -36,10 +96,8 @@
     justify-content: center;
     align-items: center;
 
-    user-select: none; /* brak mozliwosci zaznaczenia*/
     border-radius: 7px;
     background-color: #3F383E;
-    color: white;
     margin: 1px;
 
     border-color: transparent;
@@ -47,14 +105,19 @@
     border-style: solid;
 }
 
-.buttonBlue {background-color: #4cc2ff;}
+.mathBigFont {
+    font-size: 21px;
+}
+
+.buttonBlue {background-color: #4cc2ff; color: #143141;}
 .buttonBlue:hover {background-color: #47b1e9;}
-.buttonBlue:active {background-color: #42a1d5;}
+.buttonBlue:active {background-color: #42a1d5; color: #2a6788;}
 
 .buttonBright {background-color: #363a4e; border-color: #2a2f44;}
 .buttonBright:hover {background-color: #2d3147;}
-.buttonBright:active {background-color: #22273d;}
+.buttonBright:active {background-color: #22273d; color: #b4b6bd;}
 
 .buttonDark {background-color: #2f313e; border-color: #2d2f3b;}
 .buttonDark:hover {background-color: #373b4d; border-color: #2a2f43;}
-.buttonDark:active {background-color: #2d3146; border-color: #2a2f43;}
+.buttonDark:active {background-color: #2d3146; border-color: #2a2f43; color: #b8b9c0;}
+
