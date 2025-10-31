@@ -3,12 +3,15 @@
     height: 500px;
     margin-left: auto;
     margin-right: auto;
-    padding: 2px;
+    padding: 3px;
+    border-radius: 7px;
 
     display: flex;
     flex-direction: column;
 
-    background-color: #261D21;
+    font-size: 18px;
+    font-family: "Segoe UI Variable", "fantasy";
+    background-color: #1a2032;
 }
 
 .topBar {
@@ -25,7 +28,7 @@
     height: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
 }
 
 .button {
@@ -34,16 +37,24 @@
     align-items: center;
 
     user-select: none; /* brak mozliwosci zaznaczenia*/
-    border-radius: 4px;
+    border-radius: 7px;
     background-color: #3F383E;
     color: white;
-    margin: 2px;
+    margin: 1px;
+
+    border-color: transparent;
+    border-width: 1px;
+    border-style: solid;
 }
 
-.button:hover {
-    background-color: #5c525b;
-}
+.buttonBlue {background-color: #4cc2ff;}
+.buttonBlue:hover {background-color: #47b1e9;}
+.buttonBlue:active {background-color: #42a1d5;}
 
-button:hover {
+.buttonBright {background-color: #363a4e; border-color: #2a2f44;}
+.buttonBright:hover {background-color: #2d3147;}
+.buttonBright:active {background-color: #22273d;}
 
-}
+.buttonDark {background-color: #2f313e; border-color: #2d2f3b;}
+.buttonDark:hover {background-color: #373b4d; border-color: #2a2f43;}
+.buttonDark:active {background-color: #2d3146; border-color: #2a2f43;}
