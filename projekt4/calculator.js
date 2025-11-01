@@ -1,56 +1,85 @@
-function numberButton(sender)
-{
-    document.getElementById("input").innerText += sender.innerText;
+let overwriteInput = true
+let historyNumber = ""
+
+function clearEntryButton()/*DONE*/ {
+    setInput("0")
+    overwriteInput = true
 }
 
-function clearButton()
-{
-    document.getElementById("history").innerText = "";
-    document.getElementById("input").innerText = "0";
+function clearEverythingButton() /*DONE*/ {
+    setHistory("")
+    setInput("0")
+    overwriteInput = true
 }
 
-function removeButton()
-{
-    document.getElementById("input").innerText = document.getElementById("input").innerText.slice(0, -1)
-    if (document.getElementById("input").innerText.length === 0)
-        document.getElementById("input").innerText = "0"
+function removeButton()/*DONE*/ {
+    setInput(getInput().slice(0, -1))
+    if (getInput().length === 0) {
+        setInput("0")
+        overwriteInput = true
+    }
 }
 
+function numberButton(sender) {
+    if (getHistory()[getHistory().length - 1] === "=")
+        clearEverythingButton()
 
-function operationButton(sender)
-{
-    trimUnnecessaryOperators()
-    numberButton(sender);
+    if (overwriteInput) {
+        setInput(sender.innerText)
+        overwriteInput = false
+    } else {
+        setInput(getInput() + sender.innerText)
+    }
 }
 
-function evalButton()
-{
-    trimUnnecessaryOperators()
+function operationButton(sender) {
+    newHistory = document.getElementById("input").innerText + " " + sender.innerText;
+    document.getElementById("history").innerText = newHistory;
+    overwriteInput = true
+}
 
-    let equation = document.getElementById("input").innerText
+function evalButton() {
+    let input = getInput()
+    let history = getHistory()
+    let newHistory = history + " " + input
 
-    document.getElementById("history").innerText = equation + "="
-
+    let equation = newHistory
     equation = equation.replaceAll("+", "+")
     equation = equation.replaceAll("-", "-")
     equation = equation.replaceAll("×", "*")
     equation = equation.replaceAll("÷", "/")
-    equation = equation.replaceAll("", "")
-    equation = equation.replaceAll("", "")
-    equation = equation.replaceAll("", "")
+    equation = equation.replaceAll(" ", "")
 
-    /*window.alert(equation)*/
-    document.getElementById("input").innerText = eval(equation)
+    setHistory(newHistory + " =")
+    setInput(eval(equation))
+
+
 }
 
-function trimUnnecessaryOperators()
-{
+/**********************************************************************************************************************/
+
+function trimUnnecessaryOperators() {
     const input = document.getElementById("input").innerText
     const lastChar = input[input.length - 1];
 
-    if (!("1234567890".includes(lastChar)))
-    {
+    if (!("1234567890".includes(lastChar))) {
         removeButton()
     }
+}
+
+function getHistory() {
+    return document.getElementById("history").innerText
+}
+
+function setHistory(str) {
+    document.getElementById("history").innerText = str
+}
+
+function getInput() {
+    return document.getElementById("input").innerText
+}
+
+function setInput(str) {
+    document.getElementById("input").innerText = str
 }
 
