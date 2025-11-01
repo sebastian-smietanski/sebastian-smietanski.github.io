@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
     <title>Custom Draggable</title>
     <link rel="stylesheet" href="calculator.css">
     <style>
@@ -30,41 +31,65 @@
             </div>
         </div>
 
+        <div class="uselessBar">
+            <div class="leftItems">
+                <div class="uselessButton" style="font-size:40px"><div class="squeeze">≡</div></div>
+                <div class="uselessName">Standardowy</div>
+                <div class="uselessButton">↗</div>
+            </div>
+            <div class="rightItems">
+                <div class="uselessButton">⟲</div>
+            </div>
+        </div>
+
         <div class="screen">
+            <div class="history" id="history"></div>
+            <div class="input" id="input">0</div>
+        </div>
+
+        <div class="MButtonBar">
+            <div class="disabled MButton">MC</div>
+            <div class="disabled MButton">MR</div>
+            <div class="disabled MButton">M+</div>
+            <div class="disabled MButton">M-</div>
+            <div class="disabled MButton">MS</div>
+            <div class="disabled MButton">M˅</div>
         </div>
 
         <div class="calculatorKeyboard">
-            <div class="button buttonDark">%</div>
-            <div class="button buttonDark">CE</div>
-            <div class="button buttonDark">C</div>
-            <div class="button buttonDark">⌫</div>
+            <div class="button mathSmallFont">%</div>
+            <div class="button mathSmallFont buttonDark" onclick="clearButton()">CE</div>
+            <div class="button mathSmallFont buttonDark" onclick="clearButton()">C</div>
+            <div class="button mathSmallFont buttonDark" onclick="removeButton()">⌫</div>
 
-            <div class="button buttonDark">1/x</div>
-            <div class="button buttonDark">x²</div>
-            <div class="button buttonDark">√</div>
-            <div class="button buttonDark mathBigFont">÷</div>
+            <div class="button mathSmallFont ">⅟x</div>
+            <div class="button mathSmallFont ">x²</div>
+            <div class="button mathSmallFont ">√</div>
+            <div class="button buttonDark mathBigFont" onclick="operationButton(this)">÷</div>
 
-            <div class="button buttonBright">7</div>
-            <div class="button buttonBright">8</div>
-            <div class="button buttonBright">9</div>
-            <div class="button buttonDark mathBigFont">×</div>
+            <div class="button buttonBright" onclick="numberButton(this)">7</div>
+            <div class="button buttonBright" onclick="numberButton(this)">8</div>
+            <div class="button buttonBright" onclick="numberButton(this)">9</div>
+            <div class="button buttonDark mathBigFont" onclick="operationButton(this)">×</div>
 
-            <div class="button buttonBright">4</div>
-            <div class="button buttonBright">5</div>
-            <div class="button buttonBright">6</div>
-            <div class="button buttonDark mathBigFont">-</div>
+            <div class="button buttonBright" onclick="numberButton(this)">4</div>
+            <div class="button buttonBright" onclick="numberButton(this)">5</div>
+            <div class="button buttonBright" onclick="numberButton(this)">6</div>
+            <div class="button buttonDark mathBigFont" onclick="operationButton(this)">-</div>
 
-            <div class="button buttonBright">1</div>
-            <div class="button buttonBright">2</div>
-            <div class="button buttonBright">3</div>
-            <div class="button buttonDark mathBigFont">+</div>
+            <div class="button buttonBright" onclick="numberButton(this)">1</div>
+            <div class="button buttonBright" onclick="numberButton(this)">2</div>
+            <div class="button buttonBright" onclick="numberButton(this)">3</div>
+            <div class="button buttonDark mathBigFont" onclick="operationButton(this)">+</div>
 
-            <div class="button buttonBright">+/-</div>
-            <div class="button buttonBright">0</div>
+            <div class="button">±</div>
+            <div class="button buttonBright" onclick="numberButton(this)">0</div>
             <div class="button buttonBright">,</div>
-            <div class="button buttonBlue">=</div>
+            <div class="button buttonBlue" onclick="evalButton()">=</div>
         </div>
     </div>
     <!--<script src="movableBox.js"></script>-->
+    <script src="movableBox.js"></script>
+    <script src="calculator.js"></script>
 </body>
 </html>
