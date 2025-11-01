@@ -1,5 +1,6 @@
 let overwriteInput = true
 let historyNumber = ""
+let operator = ""
 
 function clearEntryButton()/*DONE*/ {
     setInput("0")
@@ -13,6 +14,11 @@ function clearEverythingButton() /*DONE*/ {
 }
 
 function removeButton()/*DONE*/ {
+    if (overwriteInput){
+        clearEverythingButton()
+        return
+    }
+
     setInput(getInput().slice(0, -1))
     if (getInput().length === 0) {
         setInput("0")
@@ -21,8 +27,13 @@ function removeButton()/*DONE*/ {
 }
 
 function numberButton(sender) {
-    if (getHistory()[getHistory().length - 1] === "=")
+    if (getHistory()[getHistory().length - 1] === "=") {
         clearEverythingButton()
+    }
+
+    if (getInput()[getInput().length - 1] === "0" && sender.innerText === "0") {
+        return
+    }
 
     if (overwriteInput) {
         setInput(sender.innerText)
@@ -30,18 +41,21 @@ function numberButton(sender) {
     } else {
         setInput(getInput() + sender.innerText)
     }
+
+    historyNumber = getInput()
 }
 
 function operationButton(sender) {
-    newHistory = document.getElementById("input").innerText + " " + sender.innerText;
-    document.getElementById("history").innerText = newHistory;
+    newHistory = document.getElementById("input").innerText + " " + sender.innerText
+    document.getElementById("history").innerText = newHistory
     overwriteInput = true
+    operator = sender.innerText
 }
 
 function evalButton() {
     let input = getInput()
     let history = getHistory()
-    let newHistory = history + " " + input
+    let newHistory = input + " " + operator + " " + historyNumber
 
     let equation = newHistory
     equation = equation.replaceAll("+", "+")
@@ -50,10 +64,9 @@ function evalButton() {
     equation = equation.replaceAll("÷", "/")
     equation = equation.replaceAll(" ", "")
 
+    overwriteInput = true
     setHistory(newHistory + " =")
     setInput(eval(equation))
-
-
 }
 
 /**********************************************************************************************************************/
