@@ -8,15 +8,16 @@
 .calculator {
     width: 320px;
     height: 530px;
+
     /*
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
      */
-    position: absolute;  /* Needed for draggable */
-    top: 50px;           /* initial position */
-    left: 50%;           /* initial horizontal position */
-    transform: translateX(-50%); /* keep it centered initially */
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
 
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.1);

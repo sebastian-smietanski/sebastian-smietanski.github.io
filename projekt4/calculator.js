@@ -87,7 +87,9 @@ function numberButton(sender) {
 
     if (overwriteInput) {
         setInput(sender.innerText)
-        overwriteInput = false
+        if (sender.innerText !== "0") {
+            overwriteInput = false
+        }
     } else {
         setInput(getInput() + sender.innerText)
     }
@@ -95,7 +97,7 @@ function numberButton(sender) {
 }
 
 function operationButton(sender) {
-    if (getInput() === "Infinity") {
+    if (hasIllegalChars(getInput())) {
         clearEverythingButton()
         return
     }
@@ -111,7 +113,7 @@ function operationButton(sender) {
 }
 
 function evalButton() {
-    if (hasInjectedJS(getInput())) {
+    if (hasIllegalChars(getInput())) {
         return
     }
 
@@ -122,6 +124,15 @@ function evalButton() {
         input = getInput()
     }
 
+    overwriteInput = true
+    overwriteHistory = true
+
+    if (input.endsWith(","))
+        input = input.replaceAll(",", "")
+
+    if (input.endsWith(",)")) /* nwm czy taki edge case moze powstac */
+        input = input.replaceAll(",)", "")
+
     if (getHistory()[getHistory().length - 1] === "=") {
         if (operator === "") {
             setHistory(getInput() + " =")
@@ -129,9 +140,21 @@ function evalButton() {
         } else {
             setHistory(input + " " + operator + " " + oldInput)
         }
+
+        if (operator === "÷" && oldInput === "0") {
+            setHistory(getHistory() + " =")
+            setInput("Nie można dzielić przez zero.")
+            return
+        }
     } else {
         setHistory(oldInput + " " + operator + " " + input)
         oldInput = input
+
+        if (operator === "÷" && input === "0") {
+            setHistory(getHistory() + " =")
+            setInput("Nie można dzielić przez zero.")
+            return
+        }
     }
 
     let equation = getHistory()
@@ -144,13 +167,11 @@ function evalButton() {
 
     setInput(String(eval(equation)).replace(".", ","))
     setHistory(getHistory() + " =")
-    overwriteInput = true
-    overwriteHistory = true
 }
 
 /**********************************************************************************************************************/
 
-function hasInjectedJS(text) {
+function hasIllegalChars(text) {
     let allowedChars = "1234567890+-÷,. e+"
     for (let i = 0; i < allowedChars.length; i++) {
         text = text.replaceAll(allowedChars[i], "")
