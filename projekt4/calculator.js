@@ -103,6 +103,10 @@ function operationButton(sender) {
 }
 
 function evalButton() {
+    if (jsInjectionTest(getInput())) {
+        return
+    }
+
     let input
     if (getInput()[0] === "-") {
         input = "(" + getInput() + ")"
@@ -121,7 +125,6 @@ function evalButton() {
         oldInput = input
     }
 
-
     let equation = getHistory()
     equation = equation.replaceAll("+", "+")
     equation = equation.replaceAll("-", "-")
@@ -138,13 +141,12 @@ function evalButton() {
 
 /**********************************************************************************************************************/
 
-function trimUnnecessaryOperators() {
-    const input = document.getElementById("input").innerText
-    const lastChar = input[input.length - 1];
-
-    if (!("1234567890".includes(lastChar))) {
-        removeButton()
+function jsInjectionTest(text) {
+    let allowedChars = "1234567890+-÷, "
+    for (let i = 0; i < allowedChars.length; i++) {
+        text.replaceAll(allowedChars[i], "")
     }
+    return text.length === 0
 }
 
 function getHistory() {
@@ -175,7 +177,8 @@ function adjustFontSize() {
     }
 
     if (getInput().length > 12) {
-        let x = (getInput().length - 12) * 3
+        /* let x = (getInput().length - 12) * 3 */
+        let x = Math.ceil(Math.sqrt((getInput().length - 12) * 45))
         document.getElementById("input").style.fontSize = `${45 - x}px`;
     } else {
         document.getElementById("input").style.fontSize = "45px";
