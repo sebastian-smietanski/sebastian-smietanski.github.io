@@ -9,10 +9,14 @@ function exitButton() {
 }
 
 function reloadButton() {
-    window.location.reload(true)
+    window.location.reload()
 }
 
 function clearEntryButton()/*DONE*/ {
+    if (overwriteHistory) {
+        clearEverythingButton()
+        return
+    }
     setInput("0")
     overwriteInput = true
 }
@@ -27,7 +31,7 @@ function clearEverythingButton() /*DONE*/ {
 }
 
 function removeButton() /*DONE*/ {
-    if (overwriteInput) {
+    if (overwriteHistory) {
         clearEverythingButton()
         return
     }
@@ -68,7 +72,11 @@ function plusMinusButton() {
 
 function numberButton(sender) {
     if (inputTooLong && !overwriteInput)
-        return;
+        return
+
+    if (sender.innerText === "0" && getInput() === "0") {
+        return
+    }
 
     if (overwriteHistory) {
         setHistory("")
@@ -103,7 +111,7 @@ function operationButton(sender) {
 }
 
 function evalButton() {
-    if (jsInjectionTest(getInput())) {
+    if (hasInjectedJS(getInput())) {
         return
     }
 
@@ -117,6 +125,7 @@ function evalButton() {
     if (getHistory()[getHistory().length - 1] === "=") {
         if (operator === "") {
             setHistory(getInput() + " =")
+            return /* zeby nie obliczac np: "1 =" */
         } else {
             setHistory(input + " " + operator + " " + oldInput)
         }
@@ -133,7 +142,7 @@ function evalButton() {
     equation = equation.replaceAll(",", ".")
     equation = equation.replaceAll(" ", "")
 
-    setInput(eval(equation))
+    setInput(String(eval(equation)).replace(".", ","))
     setHistory(getHistory() + " =")
     overwriteInput = true
     overwriteHistory = true
@@ -141,12 +150,12 @@ function evalButton() {
 
 /**********************************************************************************************************************/
 
-function jsInjectionTest(text) {
-    let allowedChars = "1234567890+-÷, "
+function hasInjectedJS(text) {
+    let allowedChars = "1234567890+-÷,. e+"
     for (let i = 0; i < allowedChars.length; i++) {
-        text.replaceAll(allowedChars[i], "")
+        text = text.replaceAll(allowedChars[i], "")
     }
-    return text.length === 0
+    return text.length !== 0
 }
 
 function getHistory() {
