@@ -1,6 +1,16 @@
 let overwriteInput = true
-let historyNumber = ""
+let overwriteHistory = false
+let inputTooLong = false
+let oldInput = ""
 let operator = ""
+
+function exitButton() {
+    window.close()
+}
+
+function reloadButton() {
+    window.location.reload(true)
+}
 
 function clearEntryButton()/*DONE*/ {
     setInput("0")
@@ -11,10 +21,13 @@ function clearEverythingButton() /*DONE*/ {
     setHistory("")
     setInput("0")
     overwriteInput = true
+    overwriteHistory = true
+    oldInput = ""
+    operator = ""
 }
 
-function removeButton()/*DONE*/ {
-    if (overwriteInput){
+function removeButton() /*DONE*/ {
+    if (overwriteInput) {
         clearEverythingButton()
         return
     }
@@ -26,13 +39,42 @@ function removeButton()/*DONE*/ {
     }
 }
 
-function numberButton(sender) {
-    if (getHistory()[getHistory().length - 1] === "=") {
-        clearEverythingButton()
+function commaButton() /*DONE*/ {
+    if (overwriteInput) {
+        setInput("0,")
+        overwriteInput = false
+        return
     }
 
-    if (getInput()[getInput().length - 1] === "0" && sender.innerText === "0") {
+    if (!getInput().includes(",")) {
+        setInput(getInput() + ",")
+        overwriteInput = false
+    }
+}
+
+function plusMinusButton() {
+    if (getInput() === "0") {
         return
+    }
+
+    if (getInput()[0] === "-") {
+        setInput(getInput().slice(1))
+    } else {
+        setInput("-" + getInput())
+    }
+
+    /*overwriteInput = false*/
+}
+
+function numberButton(sender) {
+    if (inputTooLong && !overwriteInput)
+        return;
+
+    if (overwriteHistory) {
+        setHistory("")
+        overwriteHistory = false
+        oldInput = ""
+        operator = ""
     }
 
     if (overwriteInput) {
@@ -42,31 +84,56 @@ function numberButton(sender) {
         setInput(getInput() + sender.innerText)
     }
 
-    historyNumber = getInput()
 }
 
 function operationButton(sender) {
-    newHistory = document.getElementById("input").innerText + " " + sender.innerText
-    document.getElementById("history").innerText = newHistory
-    overwriteInput = true
+    if (getInput() === "Infinity") {
+        clearEverythingButton()
+        return
+    }
+
+    if (!overwriteInput)
+        evalButton()
+
     operator = sender.innerText
+    oldInput = getInput()
+    setHistory(oldInput + " " + operator)
+    overwriteInput = true
+    overwriteHistory = false
 }
 
 function evalButton() {
-    let input = getInput()
-    let history = getHistory()
-    let newHistory = input + " " + operator + " " + historyNumber
+    let input
+    if (getInput()[0] === "-") {
+        input = "(" + getInput() + ")"
+    } else {
+        input = getInput()
+    }
 
-    let equation = newHistory
+    if (getHistory()[getHistory().length - 1] === "=") {
+        if (operator === "") {
+            setHistory(getInput() + " =")
+        } else {
+            setHistory(input + " " + operator + " " + oldInput)
+        }
+    } else {
+        setHistory(oldInput + " " + operator + " " + input)
+        oldInput = input
+    }
+
+
+    let equation = getHistory()
     equation = equation.replaceAll("+", "+")
     equation = equation.replaceAll("-", "-")
     equation = equation.replaceAll("×", "*")
     equation = equation.replaceAll("÷", "/")
+    equation = equation.replaceAll(",", ".")
     equation = equation.replaceAll(" ", "")
 
-    overwriteInput = true
-    setHistory(newHistory + " =")
     setInput(eval(equation))
+    setHistory(getHistory() + " =")
+    overwriteInput = true
+    overwriteHistory = true
 }
 
 /**********************************************************************************************************************/
@@ -96,3 +163,21 @@ function setInput(str) {
     document.getElementById("input").innerText = str
 }
 
+/**********************************************************************************************************************/
+
+document.getElementById("calculatorKeyboard").addEventListener("click", adjustFontSize);
+
+function adjustFontSize() {
+    if (getInput().length > 14) {
+        inputTooLong = true
+    } else {
+        inputTooLong = false
+    }
+
+    if (getInput().length > 12) {
+        let x = (getInput().length - 12) * 3
+        document.getElementById("input").style.fontSize = `${45 - x}px`;
+    } else {
+        document.getElementById("input").style.fontSize = "45px";
+    }
+}

@@ -27,7 +27,7 @@
             <div class="rightItems">
                 <div class="buttonTop buttonTopMnMax">—</div>
                 <div class="buttonTop buttonTopMnMax">☐</div>
-                <div class="buttonTop buttonTopClose" style="border-radius: 0 7px 0 0;">✕</div>
+                <div class="buttonTop buttonTopClose" style="border-radius: 0 7px 0 0;" onclick="exitButton()">✕</div>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                 <div class="uselessButton">↗</div>
             </div>
             <div class="rightItems">
-                <div class="uselessButton">⟲</div>
+                <div class="uselessButton" onclick="reloadButton()">⟲</div>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
             <div class="disabled MButton">M˅</div>
         </div>
 
-        <div class="calculatorKeyboard">
+        <div class="calculatorKeyboard" id="calculatorKeyboard">
             <div class="button mathSmallFont">%</div>
             <div class="button mathSmallFont buttonDark" onclick="clearEntryButton()">CE</div>
             <div class="button mathSmallFont buttonDark" onclick="clearEverythingButton()">C</div>
@@ -82,9 +82,9 @@
             <div class="button buttonBright" onclick="numberButton(this)">3</div>
             <div class="button buttonDark mathBigFont" onclick="operationButton(this)">+</div>
 
-            <div class="button">±</div>
+            <div class="button" onclick="">±</div>
             <div class="button buttonBright" onclick="numberButton(this)">0</div>
-            <div class="button buttonBright">,</div>
+            <div class="button buttonBright" onclick="commaButton()">,</div>
             <div class="button buttonBlue" onclick="evalButton()">=</div>
         </div>
     </div>
