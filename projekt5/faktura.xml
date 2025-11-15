@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="faktura.xsl"?>
 <faktura>
     <sprzedawca>
         <nazwa>Adam</nazwa>
@@ -22,6 +23,16 @@
             <nazwa>Towar1</nazwa>
             <ilosc>3</ilosc>
             <cena_jednostkowa>30</cena_jednostkowa>
+        </towar>
+        <towar>
+            <nazwa>Towar2</nazwa>
+            <ilosc>2</ilosc>
+            <cena_jednostkowa>40</cena_jednostkowa>
+        </towar>
+        <towar>
+            <nazwa>Towar2</nazwa>
+            <ilosc>2</ilosc>
+            <cena_jednostkowa>40</cena_jednostkowa>
         </towar>
         <towar>
             <nazwa>Towar2</nazwa>

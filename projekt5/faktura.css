@@ -1,9 +1,8 @@
-* {
-    font-family: Arial, sans-serif;
-}
 
 .bloczek {
     background-color: -blue;
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
 }
 
 .bloczek img {
@@ -18,3 +17,11 @@
 #nabywcaNazwa {position: absolute; left: 287px; top: 193px;}
 #nabywcaAdres {position: absolute; left: 167px; top: 234px;}
 #nabywcaNIP {position: absolute; left: 900px; top: 234px;}
+
+.bloczek table {
+    position: absolute; left: 102px; top: 330px;
+}
+
+.bloczek table tr {
+    height: 31px;
+}
