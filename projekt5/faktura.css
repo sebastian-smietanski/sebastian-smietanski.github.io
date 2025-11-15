@@ -1,0 +1,20 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+.bloczek {
+    background-color: -blue;
+}
+
+.bloczek img {
+    position: absolute;
+    z-index: -1
+}
+
+#sprzedawcaNazwa {position: absolute; left: 170px; top: 15px;}
+#sprzedawcaAdres {position: absolute; left: 150px; top: 85px;}
+#sprzedawcaNIP {position: absolute; left: 145px; top: 140px;}
+
+#nabywcaNazwa {position: absolute; left: 287px; top: 193px;}
+#nabywcaAdres {position: absolute; left: 167px; top: 234px;}
+#nabywcaNIP {position: absolute; left: 900px; top: 234px;}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faktura>
+    <sprzedawca>
+        <nazwa>Adam</nazwa>
+        <adres>Kowalski</adres>
+        <nip>7822950895</nip>
+    </sprzedawca>
+
+    <nabywca>
+        <nazwa>Jan</nazwa>
+        <adres>Nowak</adres>
+        <nip>9452120500</nip>
+    </nabywca>
+
+    <lista_towarow>
+        <towar>
+            <nazwa>Usluga1</nazwa>
+            <ilosc>1</ilosc>
+            <cena_jednostkowa>100</cena_jednostkowa>
+        </towar>
+        <towar>
+            <nazwa>Towar1</nazwa>
+            <ilosc>3</ilosc>
+            <cena_jednostkowa>30</cena_jednostkowa>
+        </towar>
+        <towar>
+            <nazwa>Towar2</nazwa>
+            <ilosc>2</ilosc>
+            <cena_jednostkowa>40</cena_jednostkowa>
+        </towar>
+    </lista_towarow>
+</faktura>
