@@ -19,9 +19,32 @@
 #nabywcaNIP {position: absolute; left: 900px; top: 234px;}
 
 .bloczek table {
-    position: absolute; left: 102px; top: 330px;
+    width: 1196px;
+    position: absolute; left: 78px; top: 330px;
+    -background-color: red;
+    -opacity: 50%;
 }
 
 .bloczek table tr {
     height: 31px;
+    -background-color: green;
 }
+
+td {
+    padding: 5px;
+}
+
+.col1 {width: 22px; text-align: center; padding: 0}
+.col2 {width: 272px}
+.col3 {width: 88px}
+.col4 {width: 41px}
+.col5 {width: 65px}
+.col6 {width: 63px}
+.col7 {width: 32px}
+.col8 {width: 68px}
+.col9 {width: 33px}
+.col10 {width: 47px}
+.col11 {width: 62px}
+.col12 {width: 32px}
+.col13 {width: 80px}
+.col14 {width: 1fr}

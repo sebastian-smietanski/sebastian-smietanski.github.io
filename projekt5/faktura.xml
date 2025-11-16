@@ -15,29 +15,44 @@
 
     <lista_towarow>
         <towar>
-            <nazwa>Usluga1</nazwa>
-            <ilosc>1</ilosc>
-            <cena_jednostkowa>100</cena_jednostkowa>
-        </towar>
-        <towar>
-            <nazwa>Towar1</nazwa>
+            <nazwa>Papier do drukarki A4 500ark.</nazwa>
+            <podstawa_zwolnienia> </podstawa_zwolnienia>
+            <miara>opak.</miara>
             <ilosc>3</ilosc>
-            <cena_jednostkowa>30</cena_jednostkowa>
+            <cena_jednostkowa>25.50</cena_jednostkowa>
+            <stawka_podatkowa>23</stawka_podatkowa>
         </towar>
         <towar>
-            <nazwa>Towar2</nazwa>
-            <ilosc>2</ilosc>
-            <cena_jednostkowa>40</cena_jednostkowa>
+            <nazwa>Toner do drukarki HP</nazwa>
+            <podstawa_zwolnienia> </podstawa_zwolnienia>
+            <miara>szt.</miara>
+            <ilosc>1</ilosc>
+            <cena_jednostkowa>120.00</cena_jednostkowa>
+            <stawka_podatkowa>23</stawka_podatkowa>
         </towar>
         <towar>
-            <nazwa>Towar2</nazwa>
+            <nazwa>Naprawa laptopa</nazwa>
+            <podstawa_zwolnienia> </podstawa_zwolnienia>
+            <miara>godz.</miara>
             <ilosc>2</ilosc>
-            <cena_jednostkowa>40</cena_jednostkowa>
+            <cena_jednostkowa>120</cena_jednostkowa>
+            <stawka_podatkowa>23</stawka_podatkowa>
         </towar>
         <towar>
-            <nazwa>Towar2</nazwa>
-            <ilosc>2</ilosc>
-            <cena_jednostkowa>40</cena_jednostkowa>
+            <nazwa>Kawa ziarnista 1kg</nazwa>
+            <podstawa_zwolnienia> </podstawa_zwolnienia>
+            <miara>kg</miara>
+            <ilosc>1</ilosc>
+            <cena_jednostkowa>45.00</cena_jednostkowa>
+            <stawka_podatkowa>23</stawka_podatkowa>
+        </towar>
+        <towar>
+            <nazwa>Wydruk dokumentów A4</nazwa>
+            <podstawa_zwolnienia> </podstawa_zwolnienia>
+            <miara>szt.</miara>
+            <ilosc>50</ilosc>
+            <cena_jednostkowa>0.30</cena_jednostkowa>
+            <stawka_podatkowa>23</stawka_podatkowa>
         </towar>
     </lista_towarow>
 </faktura>
