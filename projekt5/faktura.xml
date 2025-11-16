@@ -2,14 +2,14 @@
 <?xml-stylesheet type="text/xsl" href="faktura.xsl"?>
 <faktura>
     <sprzedawca>
-        <nazwa>Adam</nazwa>
-        <adres>Kowalski</adres>
+        <nazwa>Adam Kowalski</nazwa>
+        <adres>Nowoursynowska 166, 02-787 Warszawa</adres>
         <nip>7822950895</nip>
     </sprzedawca>
 
     <nabywca>
-        <nazwa>Jan</nazwa>
-        <adres>Nowak</adres>
+        <nazwa>Jan Nowak</nazwa>
+        <adres>al. Niepodległości 162, 02-554 Warszawa</adres>
         <nip>9452120500</nip>
     </nabywca>
 
@@ -26,8 +26,8 @@
             <nazwa>Toner do drukarki HP</nazwa>
             <podstawa_zwolnienia> </podstawa_zwolnienia>
             <miara>szt.</miara>
-            <ilosc>1</ilosc>
-            <cena_jednostkowa>120.00</cena_jednostkowa>
+            <ilosc>4</ilosc>
+            <cena_jednostkowa>119.99</cena_jednostkowa>
             <stawka_podatkowa>23</stawka_podatkowa>
         </towar>
         <towar>

@@ -34,8 +34,8 @@ td {
     padding: 5px;
 }
 
-.col1 {width: 22px; text-align: center; padding: 0}
-.col2 {width: 272px}
+.col1 {width: 19px; text-align: center; padding: 0}
+.col2 {width: 275px}
 .col3 {width: 88px}
 .col4 {width: 41px}
 .col5 {width: 65px}
@@ -48,3 +48,64 @@ td {
 .col12 {width: 32px}
 .col13 {width: 80px}
 .col14 {width: 1fr}
+
+.algnLeeft {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 5px;
+}
+
+#razemWartZL {
+    -background-color: red;
+    position: absolute;
+    left: 736px;
+    top: 701px;
+    height: 36px;
+    width: 74px;
+}
+
+#razemWartGR {
+    -background-color: blue;
+    position: absolute;
+    left: 815px;
+    top: 701px;
+    height: 36px;
+    width: 39px;
+}
+
+#podatekZL {
+    -background-color: red;
+    position: absolute;
+    left: 920px;
+    top: 701px;
+    height: 36px;
+    width: 74px;
+}
+
+#podatekGR {
+    -background-color: blue;
+    position: absolute;
+    left: 993px;
+    top: 701px;
+    height: 36px;
+    width: 39px;
+}
+
+#bezPodatkuZL {
+    -background-color: red;
+    position: absolute;
+    left: 1038px;
+    top: 701px;
+    height: 36px;
+    width: 74px;
+}
+
+#bezPodatkuGR {
+    -background-color: blue;
+    position: absolute;
+    left: 1129px;
+    top: 701px;
+    height: 36px;
+    width: 39px;
+}
