@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="bloczek">
-            <img src="faktura1.jpg" alt="faktura" height="850px" />
+            <img src="faktura1.jpg" alt="faktura" height="850px" draggable="false" />
             <div id="sprzedawcaNazwa"><xsl:value-of select="faktura/sprzedawca/nazwa" /></div>
             <div id="sprzedawcaAdres"><xsl:value-of select="faktura/sprzedawca/adres" /></div>
             <div id="sprzedawcaNIP"><xsl:value-of select="faktura/sprzedawca/nip" /></div>

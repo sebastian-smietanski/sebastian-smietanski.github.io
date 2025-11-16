@@ -44,7 +44,7 @@
             <miara>kg</miara>
             <ilosc>1</ilosc>
             <cena_jednostkowa>45.00</cena_jednostkowa>
-            <stawka_podatkowa>23</stawka_podatkowa>
+            <stawka_podatkowa>8</stawka_podatkowa>
         </towar>
         <towar>
             <nazwa>Wydruk dokumentów A4</nazwa>

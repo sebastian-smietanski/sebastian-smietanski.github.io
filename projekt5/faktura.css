@@ -6,20 +6,21 @@
 }
 
 .bloczek img {
+    user-select: none;
     position: absolute;
     z-index: -1
 }
 
-#sprzedawcaNazwa {position: absolute; left: 170px; top: 15px;}
-#sprzedawcaAdres {position: absolute; left: 150px; top: 85px;}
-#sprzedawcaNIP {position: absolute; left: 145px; top: 140px;}
+#sprzedawcaNazwa {position: absolute; left: 170px; top: 17px;}
+#sprzedawcaAdres {position: absolute; left: 150px; top: 87px;}
+#sprzedawcaNIP {position: absolute; left: 145px; top: 142px;}
 
-#nabywcaNazwa {position: absolute; left: 287px; top: 193px;}
-#nabywcaAdres {position: absolute; left: 167px; top: 234px;}
-#nabywcaNIP {position: absolute; left: 900px; top: 234px;}
+#nabywcaNazwa {position: absolute; left: 287px; top: 195px;}
+#nabywcaAdres {position: absolute; left: 167px; top: 236px;}
+#nabywcaNIP {position: absolute; left: 900px; top: 236px;}
 
 .bloczek table {
-    width: 1196px;
+    width: 1095px;
     position: absolute; left: 78px; top: 330px;
     -background-color: red;
     -opacity: 50%;
@@ -32,10 +33,11 @@
 
 td {
     padding: 5px;
+    text-align: center;
 }
 
-.col1 {width: 19px; text-align: center; padding: 0}
-.col2 {width: 275px}
+.col1 {width: 19px; padding: 0}
+.col2 {width: 275px; text-align: left;}
 .col3 {width: 88px}
 .col4 {width: 41px}
 .col5 {width: 65px}
@@ -50,9 +52,10 @@ td {
 .col14 {width: 1fr}
 
 .algnLeeft {
+    font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     padding-left: 5px;
 }
 
