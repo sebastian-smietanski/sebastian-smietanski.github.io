@@ -32,6 +32,7 @@ body {
 
  .left {
      font-weight: 900;
+     text-align: left;
  }
 
  .left,

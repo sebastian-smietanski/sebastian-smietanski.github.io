@@ -1,0 +1,10 @@
+#source_code_redirect {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+#source_code_img {
+    user-select: none;
+    height: 50px;
+}

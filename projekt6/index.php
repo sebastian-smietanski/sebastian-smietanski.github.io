@@ -6,6 +6,7 @@
     <title>BSI Projekt 3: Formularz PHP</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="source_code_redirect.css">
     <style>
         input, textarea, select {
             border-radius: 0px 0px 7px 7px;
@@ -86,7 +87,7 @@
             </div>
             <div>
                 <label for="plec">Płeć </label>
-                <select id="plec" name="plec" required>
+                <select id="plec" name="plec">
                     <option value="" disabled selected>Wybierz Płeć</option>
                     <option value="Inna">Inna</option>
                     <option value="Kobieta">Kobieta</option>
@@ -100,7 +101,7 @@
         <div>
             <div>
                 <label for="wojewodztwo">Województwo </label>
-                <select id="wojewodztwo" name="wojewodztwo" required>
+                <select id="wojewodztwo" name="wojewodztwo">
                     <option value="" disabled selected>Wybierz województwo</option>
                     <option value="Dolnośląskie">Dolnośląskie</option>
                     <option value="Kujawsko-Pomorskie">Kujawsko-Pomorskie</option>
@@ -197,5 +198,10 @@
         </div>
     </div>
 </form>
+<div id="source_code_redirect">
+    <a href="https://github.com/sebastian-smietanski/sebastian-smietanski.github.io/blob/main/projekt6/index.php">
+        <img src="source_code.png" alt="Source code icon" draggable="false" id="source_code_img">
+    </a>
+</div>
 </body>
 </html>

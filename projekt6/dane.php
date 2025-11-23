@@ -5,6 +5,7 @@
     <title>BSI Projekt 6: Formularz PHP</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="dane.css">
+    <link rel="stylesheet" href="source_code_redirect.css">
 </head>
 <body>
     <h2  class="header">Formularz</h2>
@@ -24,8 +25,22 @@
                 else {
                     echo $_GET["dataurodzenia"];
                 } ?></div></div>
-        <div class="row"><div class="left">Płeć:</div><div class="right"> <?php echo $_GET["plec"] ?></div></div>
-        <div class="row"><div class="left">Adres zamieszkania:</div><div class="right"> <?php echo $_GET["wojewodztwo"] . " " . $_GET["miasto"] . " " . $_GET["kodpocztowy"] . " " . $_GET["ulica"] . " " . $_GET["numerdomu"] . " " . $_GET["numermieszkania"] . " " ?></div></div>
+        <div class="row"><div class="left">Płeć:</div><div class="right"> <?php
+                if (isset($_GET["plec"])) {
+                    echo $_GET["plec"];
+                }
+                else {
+                    echo "Brak.";
+                } ?></div></div>
+        <div class="row"><div class="left">Adres zamieszkania:</div><div class="right"> <?php
+                $adres = $_GET["miasto"] . " " . $_GET["kodpocztowy"] . " " . $_GET["ulica"] . " " . $_GET["numerdomu"] . " " . $_GET["numermieszkania"];
+                if (isset($_GET["wojewodztwo"]))
+                    echo $_GET["wojewodztwo"] . " " . $adres;
+                else if (strlen($adres) <= 4)
+                    echo "Brak.";
+                else
+                    echo $adres;
+                ?></div></div>
         <div class="row"><div class="left">E-mail:</div><div class="right">  <?php
                 if (strlen($_GET["email"]) == 0) {
                     echo "Brak.";
@@ -61,6 +76,11 @@
             else {
                 echo $_GET["uwagi"];
             } ?></div></div>
+    </div>
+    <div id="source_code_redirect">
+        <a href="https://github.com/sebastian-smietanski/sebastian-smietanski.github.io/blob/main/projekt6/dane.php">
+            <img src="source_code.png" alt="Source code icon" draggable="false" id="source_code_img">
+        </a>
     </div>
 </body>
 </html>
