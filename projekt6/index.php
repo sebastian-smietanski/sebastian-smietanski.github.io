@@ -3,7 +3,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>BSI Projekt 3: Formularz PHP</title>
+    <title>BSI Projekt 6: Formularz PHP</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="source_code_redirect.css">
