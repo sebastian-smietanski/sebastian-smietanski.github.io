@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
+$username = "root"; // root for local, jsdthe1st fot cba hosting
 $password = file_get_contents("password.txt");
-$dbname = "bsi_base";
+$dbname = "bsi_base"; // bsi_base for local, jsdthe1st for cba hosting
 
 $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
