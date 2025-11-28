@@ -5,9 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $servername = "localhost";
-$username = "root";
-$password = "bo&4wa72jwJeOj7EsfMKDVqJtmjsvr";
-$dbname = "bsi_base";
+$username = "jsdthe1st";
+$password = file_get_contents("password.txt");
+$dbname = "jsdthe1st";
 $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
     die("Connection failed: " . $connect->connect_error);
@@ -25,8 +25,14 @@ if (isset($_POST['deleteButton'])) {
     $sql->execute();
 }
 
-if (isset($_POST['modifyButton'])) {
+if (isset($_POST['saveModifyButton'])) {
+    $sql = $connect->prepare("UPDATE people SET imie = ?, nazwisko = ?, wiek = ? WHERE id = ?");
+    $sql->bind_param("ssii", $_POST['imie'], $_POST['nazwisko'], $_POST['wiek'], $_POST['id']);
+    $sql->execute();
+}
 
+if (isset($_POST['cancelModifyButton'])) {
+    //pass
 }
 
 header("Location: index.php");

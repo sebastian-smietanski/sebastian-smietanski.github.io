@@ -18,13 +18,13 @@ function echo_table_normal($table) {
     echo "<div class='row headerRow'><div>Imię:</div><div>Nazwisko:</div><div>Wiek:</div><div></div><div></div></div>";
     while ($row = $table->fetch_assoc()) {
         echo "<div class='row'>";
-        echo "<div>" . $row["imie"] . "</div>";
-        echo "<div>" . $row["nazwisko"] . "</div>";
-        echo "<div>" . $row["wiek"] . "</div>";
+        echo "<div class='nameDiv'>" . $row["imie"] . "</div>";
+        echo "<div class='surnameDiv'>" . $row["nazwisko"] . "</div>";
+        echo "<div class='ageDiv'>" . $row["wiek"] . "</div>";
 
         echo "<div class='firstBtnDiv'>";
         echo "<form method='post' action='requests.php'><input type='submit' id='deleteButton' value='Usuń' name='deleteButton' class='button'>";
-        echo "<input type='hidden' name='id' value='" . $row["id"] . "'></form>";
+        echo "<input type='hidden' name='id' value='" . $row["id"] . "' class='idInput'></form>";
         echo "</div>";
 
         echo "<div class='secondBtnDiv'><button class='button modifyButton'>Modyfikuj</button></div>";
@@ -59,23 +59,33 @@ function echo_table_modify($table) {
             <div class="addRow">
                 <div class="inputBox">
                     <label for="dodaneImie">Imię</label>
-                    <input type="text" id="dodaneImie" name="dodaneImie" required value="Dawid">
+                    <input type="text" id="dodaneImie" name="dodaneImie" required maxlength="50" value="">
                 </div>
 
                 <div class="inputBox">
                     <label for="dodaneNazwisko">Nazwisko</label>
-                    <input type="text" id="dodaneNazwisko" name="dodaneNazwisko" required value="Wójcik">
+                    <input type="text" id="dodaneNazwisko" name="dodaneNazwisko" required maxlength="50" value="">
                 </div>
 
                 <div class="inputBox">
                     <label for="dodanyWiek">Wiek</label>
-                    <input type="text" id="dodanyWiek" name="dodanyWiek" inputmode="numeric" maxlength="3" required value="38">
+                    <input type="text" id="dodanyWiek" name="dodanyWiek" inputmode="numeric" maxlength="3" required value="">
                 </div>
             </div>
             <div class="addRow inputBox">
                 <input type="submit" id="addButton" value="Dodaj" name="addButton" class="button">
             </div>
         </form>
+    </div>
+    <div id="source_code_redirect">
+        <a href="https://github.com/sebastian-smietanski/sebastian-smietanski.github.io/blob/main/projekt7/index.php">
+            <img src="source_code.png" alt="Source code icon" draggable="false" id="source_code_img" title="index.php">
+        </a>
+    </div>
+    <div id="source_code_redirect2">
+        <a href="https://github.com/sebastian-smietanski/sebastian-smietanski.github.io/blob/main/projekt7/requests.php">
+            <img src="source_code.png" alt="Source code icon" draggable="false" id="source_code_img" title="requests.php">
+        </a>
     </div>
     <script src="modify.js"></script>
 </body>

@@ -16,15 +16,18 @@ buttons.forEach(button => {
 
         if (Math.abs(endX - startX) < 10 && Math.abs(endY - startY) < 10) {
             const parent = button.parentElement.parentElement;
-            const firstBtnDiv = button.parentElement.parentElement.querySelectorAll('.firstBtnDiv')[0];
-            const secondBtnDiv = button.parentElement.parentElement.querySelectorAll('.secondBtnDiv')[0];
+            const name = button.parentElement.parentElement.querySelectorAll('.nameDiv')[0].innerText;
+            const surname = button.parentElement.parentElement.querySelectorAll('.surnameDiv')[0].innerText;
+            const age = button.parentElement.parentElement.querySelectorAll('.ageDiv')[0].innerText;
+            const id = button.parentElement.parentElement.querySelectorAll('.idInput')[0].value;
             Del_all_buttons()
             parent.outerHTML = "<form method='post' action='requests.php' class='row' style='padding-left: 14px'> " +
-                "<div> <input type='text' id='imie' name='imie' required value=\"Dawid\"> </div>" +
-                "<div> <input type='text' id='imie' name='imie' required value=\"Dawid\"> </div>" +
-                "<div> <input type='text' id='wiek' name='wiek' inputmode='numeric' maxlength='3' required value='38'> </div>" +
-                "<div><input type=\"submit\" id=\"saveButton\" value=\"Zapisz\" name=\"saveButton\" class=\"button\"></div>" +
-                "<div><input type=\"submit\" id=\"cancelButton\" value=\"Anuluj\" name=\"cancelButton\" class=\"button\"></div>" +
+                "<div> <input type='text' id='imie' name='imie' required value=\'" + name + "\'> </div>" +
+                "<div> <input type='text' id='nazwisko' name='nazwisko' required value=\'" + surname + "\'> </div>" +
+                "<div> <input type='text' id='wiek' name='wiek' inputmode='numeric' maxlength='3' required value=\'" + age + "\'> </div>" +
+                "<div><input type=\"submit\" id=\"saveModifyButton\" value=\"Zapisz\" name=\"saveModifyButton\" class=\"button\"></div>" +
+                "<input type='hidden' name='id' value=\'" + id + "\'>" +
+                "<div><input type=\"submit\" id=\"cancelModifyButton\" value=\"Anuluj\" name=\"cancelModifyButton\" class=\"button\"></div>" +
                 "</form>";
         }
     });

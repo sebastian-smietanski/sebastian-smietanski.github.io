@@ -118,7 +118,7 @@ body {
 }
 
 #addButton {
-    width: 525px;
+    width: 100%;
     justify-self: center;
 }
 
@@ -138,3 +138,15 @@ body {
 .button:active {
     background-color: #b4b6ce;
 }
+
+#deleteButton {background-color: #ffc2c2;}
+#deleteButton:hover {background-color: #ff8383;}
+#deleteButton:active {background-color: #ff4545; color: white;}
+
+#saveModifyButton {background-color: #ccff33;}
+#saveModifyButton:hover {background-color: #9ef01a;}
+#saveModifyButton:active {background-color: #70e000; color: white;}
+
+#cancelModifyButton {background-color: #83aff0;}
+#cancelModifyButton:hover {background-color: #4779c4;}
+#cancelModifyButton:active {background-color: #3c649f; color: white;}
