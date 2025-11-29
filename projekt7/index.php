@@ -15,7 +15,7 @@ function echo_table($table) {
 
 function echo_table_normal($table) {
     echo "<div class='box'>";
-    echo "<div class='row headerRow'><div>Imię:</div><div>Nazwisko:</div><div>Wiek:</div><div></div><div></div></div>";
+    echo "<div class='row headerRow'><div style='padding-left: 5px''>Imię:</div><div>Nazwisko:</div><div>Wiek:</div><div></div><div></div></div>";
     while ($row = $table->fetch_assoc()) {
         echo "<div class='row'>";
         echo "<div class='nameDiv'>" . $row["imie"] . "</div>";
