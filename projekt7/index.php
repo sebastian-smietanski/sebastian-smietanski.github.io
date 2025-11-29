@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root"; // root for local, jsdthe1st fot cba hosting
+$username = "jsdthe1st"; // root for local, jsdthe1st fot cba hosting
 $password = file_get_contents("password.txt");
-$dbname = "bsi_base"; // bsi_base for local, jsdthe1st for cba hosting
+$dbname = "jsdthe1st"; // bsi_base for local, jsdthe1st for cba hosting
 
 $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
@@ -23,7 +23,7 @@ function echo_table_normal($table) {
         echo "<div class='ageDiv'>" . $row["wiek"] . "</div>";
 
         echo "<div class='firstBtnDiv'>";
-        echo "<form method='post' action='requests.php'><input type='submit' id='deleteButton' value='Usuń' name='deleteButton' class='button'>";
+        echo "<form method='post' action='requests.php' onsubmit='return confirm(\"Na pewno chcesz usunąć rekord?\");'><input type='submit' id='deleteButton' value='Usuń' name='deleteButton' class='button'>";
         echo "<input type='hidden' name='id' value='" . $row["id"] . "' class='idInput'></form>";
         echo "</div>";
 

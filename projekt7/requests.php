@@ -5,9 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $servername = "localhost";
-$username = "jsdthe1st";
+$username = "jsdthe1st"; // root for local, jsdthe1st fot cba hosting
 $password = file_get_contents("password.txt");
-$dbname = "jsdthe1st";
+$dbname = "jsdthe1st"; // bsi_base for local, jsdthe1st for cba hosting
 $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
     die("Connection failed: " . $connect->connect_error);
@@ -37,3 +37,5 @@ if (isset($_POST['cancelModifyButton'])) {
 
 header("Location: index.php");
 exit;
+
+
