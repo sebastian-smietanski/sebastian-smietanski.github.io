@@ -50,7 +50,7 @@ function echo_table_modify($table) {
 <body>
     <h2 id="header">Baza MySQL</h2>
     <?php
-        $sql = "SELECT * FROM `people`";
+        $sql = "SELECT * FROM `people` ORDER BY id ASC";
         $result = $connect->query($sql);
         echo_table($result);
     ?>
