@@ -5,19 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // =========================== DATA BASE ===========================
-
-if (str_contains(__DIR__, "jsd.j.pl")){ // when remote
-    $servername = "localhost";
-    $username = "jsdthe1st";
-    $password = file_get_contents("../credentials/password_cba.txt");
-    $dbname = "jsdthe1st";
-}
-else { // when local
-    $servername = "localhost";
-    $username = "root";
-    $password = file_get_contents("../credentials/password_local.txt");
-    $dbname = "bsi_base";
-}
+$servername = $username = $password = $dbname = null; // hide PHPStorm warnings
+include '../credentials/db_credentials.php';
 
 $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
@@ -102,3 +91,6 @@ if (isset($_POST['logout'])) {
     header("Location: login.php");
     exit;
 }
+
+// TODO: reagowanie na requesty od requests.php
+// TODO: weryfikacja w js i regex

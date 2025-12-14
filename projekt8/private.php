@@ -5,7 +5,7 @@ if (!isset($_SESSION['id'])) {
     <h1>Access denied</h1><br>
     You need to log in before accessing this page.
     ';
-    $_SESSION = [];
+    session_unset();
     session_destroy();
     exit;
 } ?>
