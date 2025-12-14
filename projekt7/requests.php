@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: index.php");
+    header("Location: projekt7.php");
     exit;
 }
 
@@ -35,7 +35,7 @@ if (isset($_POST['cancelModifyButton'])) {
     //pass
 }
 
-header("Location: index.php");
+header("Location: projekt7.php");
 exit;
 
 

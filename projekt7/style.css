@@ -23,7 +23,7 @@ body {
     text-align: center;
 }
 
-.box {
+.boxBase {
     width: auto;
     border-radius: 25px;
     background: #B6CEB4;
@@ -75,7 +75,7 @@ body {
 
 
 
-.addRow {
+.column {
     width: auto;
     display: grid;
     grid-auto-flow: column;
@@ -92,7 +92,7 @@ body {
     background-color: #D9E9CF;
 }
 
-.addRow label {
+.column label {
     margin-left: 5px;
     padding: 5px 5px 2px 5px;
 
@@ -108,7 +108,7 @@ body {
     border-width: 0px;
 }
 
-.addRow input {
+.column input {
     border-radius: 0px 0px 7px 7px;
     padding: 6px;
     background-color: #F0F0F0;

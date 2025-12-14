@@ -1,0 +1,23 @@
+.inputBox {
+    width: 100%;
+    padding: 0;
+    border-radius: 7px;
+    display: grid;
+    text-align: left;
+    grid-auto-flow: row;
+    background-color: #D9E9CF;
+}
+
+.inputBox label {
+    margin-left: 5px;
+    padding: 5px 5px 2px 5px;
+}
+
+.inputBox input {
+    border-radius: 0 0 7px 7px;
+    padding: 6px;
+    background-color: #F0F0F0;
+    width: 100%;
+    box-sizing: border-box;
+    border-width: 0;
+}

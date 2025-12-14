@@ -1,0 +1,24 @@
+.column {
+    width: 300px;
+
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    row-gap: 10px;
+
+    align-items: center;
+}
+
+.hyperLink {
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.hyperLink:hover {
+    filter: brightness(200%);
+}
+
+.warning {
+    font-size: 9px;
+    color: red;
+}

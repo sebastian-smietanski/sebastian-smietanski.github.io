@@ -1,0 +1,21 @@
+.button {
+    border-radius: 7px;
+    padding: 6px;
+    background-color: #F0F0F0;
+    border-width: 0;
+
+    width: 100%;
+    display: inline-block;     /* trimmed to content */
+    justify-content: center;     /* horizonal center */
+    align-items: center;     /* vertical center */
+
+    user-select: none;
+}
+
+.button:hover {
+    background-color: #cccccc;
+}
+
+.button:active {
+    background-color: #b4b6ce;
+}
