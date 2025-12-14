@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // check if correct credentials
+    // search in database
     $sql = $connect->prepare("SELECT id, salt, passwordhash FROM users WHERE email = ? LIMIT 1");
     $sql->bind_param("s", $email);
     $sql->execute();
@@ -58,7 +58,9 @@ if (isset($_POST['login'])) {
 
     // no match: email
     if ($sql->num_rows === 0) {
-        header("Location: login.php?error=no_match_email"); // _email sufix only for debugging purposes
+        session_start();
+        $_SESSION['wrong_email'] = true;
+        header("Location: login.php?DebugError=no_match_email"); // GET sufix only for debugging purposes
         exit;
     }
 
@@ -73,12 +75,15 @@ if (isset($_POST['login'])) {
     $password_hash_current = hash('sha256', $password . $salt);
 
     if ($password_hash_current !== $password_hash_correct) {
-        header("Location: login.php?error=no_match_password"); // _password sufix only for debugging purposes
+        session_start();
+        $_SESSION['wrong_password'] = true;
+        header("Location: login.php?DebugError=no_match_password"); // GET sufix only for debugging purposes
         exit;
     }
 
     // successful login
     session_start();
+    $_SESSION['logged_in'] = true;
     $_SESSION['id'] = $id;
     header("Location: private.php");
     exit;
@@ -86,7 +91,7 @@ if (isset($_POST['login'])) {
 
 if (isset($_POST['logout'])) {
     session_start();
-    $_SESSION = [];
+    session_unset();
     session_destroy();
     header("Location: login.php");
     exit;

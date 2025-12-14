@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['logged_in'])) {
+    header('Location: private.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -24,10 +32,26 @@
             <input type="password" id="password" name="password" required value="password">
         </div>
 
+        <?php
+        if (isset($_SESSION['wrong_email']) || isset($_SESSION['wrong_password'])) {
+            echo '<div class="warning">Niepoprawne hasło lub email</div>';
+        }
+        ?>
+
         <input class="button" type="submit" id="login" value="Zaloguj" name="login">
 
         <a class="hyperLink" href="register.php">Zarejestruj się</a>
     </div>
 </form>
+<div id="source_code_redirect">
+    <a href="https://github.com/sebastian-smietanski/sebastian-smietanski.github.io/blob/main/projekt8">
+        <img src="../icons/source_code.png" alt="Source code icon" draggable="false" id="source_code_img" title="Kod źródłowy">
+    </a>
+</div>
 </body>
 </html>
+
+<?php
+session_unset();
+session_destroy();
+?>

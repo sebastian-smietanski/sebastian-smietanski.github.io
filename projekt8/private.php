@@ -1,9 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['logged_in'])) {
     echo '
-    <h1>Access denied</h1><br>
-    You need to log in before accessing this page.
+    <h1>Access denied</h1>
+    <br>
+    <div>You need to log in before accessing this page.</div>
     ';
     session_unset();
     session_destroy();
@@ -29,5 +30,10 @@ if (!isset($_SESSION['id'])) {
             <input class="button" type="submit" id="logout" value="Wyloguj" name="logout">
         </form>
     </div>
+<div id="source_code_redirect">
+    <a href="https://github.com/sebastian-smietanski/sebastian-smietanski.github.io/blob/main/projekt8">
+        <img src="../icons/source_code.png" alt="Source code icon" draggable="false" id="source_code_img" title="Kod źródłowy">
+    </a>
+</div>
 </body>
 </html>

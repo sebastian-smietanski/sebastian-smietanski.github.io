@@ -56,5 +56,10 @@
             <a class="hyperLink" href="login.php">Zaloguj się</a>
     </div>
 </form>
+<div id="source_code_redirect">
+    <a href="https://github.com/sebastian-smietanski/sebastian-smietanski.github.io/blob/main/projekt8">
+        <img src="../icons/source_code.png" alt="Source code icon" draggable="false" id="source_code_img" title="Kod źródłowy">
+    </a>
+</div>
 </body>
 </html>
