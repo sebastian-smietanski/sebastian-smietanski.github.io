@@ -70,7 +70,7 @@ if (isset($_POST['register'])) {
 //    }
 
     // add new user
-    $salt = bin2hex(random_bytes(16));
+    $salt = bin2hex(random_bytes(4));
     $password_hash_current = hash('sha256', $password . $salt);
     $sql = $connect->prepare("INSERT INTO users (name, surname, email, salt, passwordhash) VALUES (?, ?, ?, ?, ?)");
     $sql->bind_param("sssss", $name, $surname, $email, $salt, $password_hash_current);

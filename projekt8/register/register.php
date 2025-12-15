@@ -61,7 +61,7 @@ if (isset($_SESSION['logged_in'])) {
                 <!-- repeat password -->
                 <div class="inputBox">
                     <label for="password_repeat">Potwierdź hasło</label>
-                    <input type="password" id="password_repeat" name="password_repeat" required value="Password1!" pattern="" title="Hasła muszą być takie same.">
+                    <input type="password" id="password_repeat" name="password_repeat" required value="Password1!" title="Hasła muszą być takie same.">
                     <img src="../../icons/eye_on.png" draggable="false" class="visibility-btn" height="20px" width="20px" alt="eye">
                 </div>
                 <div class="warning" id="warning_password_repeat" style="display: none">Hasła nie są takie same.</div>
