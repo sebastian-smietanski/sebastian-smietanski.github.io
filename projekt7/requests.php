@@ -4,10 +4,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$servername = "localhost";
-$username = "jsdthe1st"; // root for local, jsdthe1st fot cba hosting
-$password = file_get_contents("password.txt");
-$dbname = "jsdthe1st"; // bsi_base for local, jsdthe1st for cba hosting
+$servername = $username = $password = $dbname = null; // hide PHPStorm warnings
+include '../credentials/db_credentials.php';
+
 $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
     die("Connection failed: " . $connect->connect_error);

@@ -1,8 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root"; // root for local, jsdthe1st fot cba hosting
-$password = file_get_contents("password.txt");
-$dbname = "bsi_base"; // bsi_base for local, jsdthe1st for cba hosting
+$servername = $username = $password = $dbname = null; // hide PHPStorm warnings
+include '../credentials/db_credentials.php';
 
 $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
@@ -14,7 +12,7 @@ function echo_table($table) {
 }
 
 function echo_table_normal($table) {
-    echo "<div class='box'>";
+    echo "<div class='boxBase'>";
     echo "<div class='row headerRow'><div style='padding-left: 5px''>Imię:</div><div>Nazwisko:</div><div>Wiek:</div><div></div><div></div></div>";
     while ($row = $table->fetch_assoc()) {
         echo "<div class='row'>";
@@ -54,9 +52,9 @@ function echo_table_modify($table) {
         $result = $connect->query($sql);
         echo_table($result);
     ?>
-    <div class="box" style="padding: 8px">
+    <div class="boxBase" style="padding: 8px">
         <form method="post" action="requests.php">
-            <div class="addRow">
+            <div class="addRow column">
                 <div class="inputBox">
                     <label for="dodaneImie">Imię</label>
                     <input type="text" id="dodaneImie" name="dodaneImie" required maxlength="50" value="">
