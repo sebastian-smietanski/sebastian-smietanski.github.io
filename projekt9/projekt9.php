@@ -20,7 +20,7 @@
     <div id="loader" class="loader" hidden></div>
 </div>
 
-<div id="gallery" class="imggallery">
+<div id="gallery" class="imggallery" style="z-index: 1">
 </div>
 
 <div id="source_code_redirect">

@@ -12,9 +12,15 @@ function showHint() {
         if (this.readyState === 4 && this.status === 200) {
             loader.hidden = true;
             box.hidden = true;
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(this.responseText, "text/xml");
-            gallery.innerText = xmlDoc.
+
+            const wydzialy = JSON.parse(this.responseText)[0];
+
+            //gallery.innerHTML = wydzialy[0][2]["nazwa"];
+            for (let i = 0; i < wydzialy.length; i++) {
+                const nazwa = wydzialy[i]["nazwa"];
+                const grafika = wydzialy[i]["grafika"];
+                gallery.innerHTML += '<div class="imgbox"> <img src="' + grafika + '" alt="Grafika wydziału" class="img"> <p class="imgcaptin">' + nazwa + '</p> </div>';
+            }
         }
     };
     xmlhttp.open("post", "scraper.php", true);

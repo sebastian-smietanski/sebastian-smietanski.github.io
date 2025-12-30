@@ -8,22 +8,21 @@ $xpath = new DOMXPath($dom);
 $nodes = $xpath->query(
         "//*[contains(concat(' ', normalize-space(@class), ' '), ' syl-content-box ')]" // GetElementsByClassName
 );
-$xml = new SimpleXMLElement('<xml/>');
+$wydzialy = [];
 foreach ($nodes as $node) {
     $nazwa = $node->textContent;
     $style = $node->attributes->getNamedItem("style")->textContent;
     $img = str_replace(['background-image: url(', ')'], '', $style);
 
-    $wydzial = $xml->addChild('wydzial');
-    $wydzial->addChild("nazwa", $nazwa);
-    $wydzial->addChild("grafika", $img);
-//    echo
-//    '
-//        <div class="imgbox">
-//            <img src=" ' . $img . ' " alt="Grafika wydziału" class="img">
-//            <p class="imgcaptin"> ' . $nazwa . ' </p>
-//        </div>
-//    ';
-}
-$xml->asXML("wydzialy.xml");
-echo $xml->saveXML();
+    $wydzialy[] = [
+        "nazwa"   => $nazwa,
+        "grafika" => $img
+    ];
+};
+
+$json = json_encode([$wydzialy], JSON_PRETTY_PRINT);
+
+file_put_contents("wydizaly.json", $json);
+
+echo $json;
+
