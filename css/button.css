@@ -5,10 +5,10 @@
     border-width: 0;
 
     width: 100%;
-    display: inline-block;     /* trimmed to content */
-    justify-content: center;     /* horizonal center */
-    align-items: center;     /* vertical center */
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
     user-select: none;
 }
 

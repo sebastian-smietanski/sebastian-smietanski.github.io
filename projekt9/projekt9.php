@@ -23,7 +23,7 @@
 <div id="gallery" class="imggallery" style="z-index: 1">
 </div>
 
-<div id="source_code_redirect">
+<div id="source_code_redirect"  style="z-index: 2">
     <a href="https://github.com/sebastian-smietanski/sebastian-smietanski.github.io/blob/main/projekt9">
         <img src="../icons/source_code.png" alt="Source code icon" draggable="false" id="source_code_img" title="Kod źródłowy">
     </a>
