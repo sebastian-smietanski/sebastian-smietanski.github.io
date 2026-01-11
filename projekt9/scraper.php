@@ -1,6 +1,18 @@
 <?php
 $url = "https://sylabus.sggw.edu.pl/";
-$html = file_get_contents($url);
+
+$curl = curl_init();
+curl_setopt_array($curl, [
+    CURLOPT_URL => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_USERAGENT => 'Mozilla/5.0',
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYHOST => false
+]);
+$html = curl_exec($curl);
+
 libxml_use_internal_errors(true);
 $dom = new DOMDocument();
 $dom->loadHTML($html);
